@@ -1,0 +1,23 @@
+.cat-info {
+    display: flex;
+    margin-top: 20px;
+}
+.img-wrp {
+    margin-right: 20px;
+    height: 300px;
+}
+.description {margin-top: auto;}
+img { 
+    display: block;
+    height: 100%;
+object-fit: contain;
+}
+.loader {
+    font-weight: 700;
+}
+.error {
+    color: red;
+}
+span {
+    font-weight: 700;
+}
