@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://KostiantynSS.github.io/goit-js-hw-10",
+  "homepage": "https://KostiantynSS.github.io/goit-js-hw-11",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-10/"
+    "build": "parcel build src/*.html --public-url /goit-js-hw-11/"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
-    "modern-normalize": "^1.1.0",
-    "slim-select": "^2.6.0"
+    "modern-normalize": "^1.1.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
