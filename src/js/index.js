@@ -11,7 +11,7 @@ const loadMoreBtn = document.querySelector('.load-more')
 form.addEventListener('submit', onSubmit)
 loadMoreBtn.addEventListener('click', handleLoadMoreBtn)
 let currentPage = 1;
-
+let totalPages
 const searchParams = new URLSearchParams({
   key:'38665853-fe99969bd23bb921fc896ab74',
   image_type: 'photo',
