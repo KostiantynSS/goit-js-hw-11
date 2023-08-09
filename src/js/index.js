@@ -1,5 +1,8 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
+import SimpleLightbox from "simplelightbox";
+
+import "simplelightbox/dist/simple-lightbox.min.css";
 
 const form = document.querySelector('#search-form')
 const gallery = document.querySelector('.gallery')
@@ -31,7 +34,7 @@ axiosPhotos()
   }
 function createMarkup({webformatURL, tags, likes, views, comments, downloads}){
   return `<div class="photo-card">
-<img src="${webformatURL}" alt="${tags}" loading="lazy" />
+<a><img src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
 <div class="info">
   <p class="info-item">
     <b>Likes </b>
@@ -60,10 +63,7 @@ function handleLoadMoreBtn(){
 
 
 
-  // console.log(currentPage)
-    // console.log(searchParams.get('page'));
-    // console.log('total:', resp.data.total);
-    // console.log('hits',resp.data.totalHits);
+ 
     async function axiosPhotos(){await axios('',{params:searchParams})
     .then(resp => {
       
