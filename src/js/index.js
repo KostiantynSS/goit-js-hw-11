@@ -1,9 +1,8 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
-import SimpleLightbox from "simplelightbox";
-
+import SimpleLightbox from 'simplelightbox';
 import "simplelightbox/dist/simple-lightbox.min.css";
-
+const lightbox = new SimpleLightbox('.gallery a');
 const form = document.querySelector('#search-form')
 const gallery = document.querySelector('.gallery')
 const loadMoreBtn = document.querySelector('.load-more')
@@ -32,9 +31,9 @@ async function onSubmit(e) {
 axiosPhotos()
   
   }
-function createMarkup({webformatURL, tags, likes, views, comments, downloads}){
-  return `<div class="photo-card">
-<a><img src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
+function createMarkup({largeImageURL, webformatURL, tags, likes, views, comments, downloads}){
+  return `<div class="photo-card"
+<a href="${largeImageURL}"><img src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
 <div class="info">
   <p class="info-item">
     <b>Likes </b>
@@ -72,7 +71,7 @@ function handleLoadMoreBtn(){
      
       const photoArr = resp.data.hits;
   if(photoArr.length === 0){Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again')}
-  if (totalPages === currentPage){Notiflix.Notify.failure("We're sorry, but you've reached the end of search results.")}
+  if (totalPages === currentPage){Notiflix.Notify.info("We're sorry, but you've reached the end of search results.")}
       photoArr.map(result => 
         gallery.insertAdjacentHTML('beforeend', createMarkup(result)) )
       }).catch(err => console.log(err))}
