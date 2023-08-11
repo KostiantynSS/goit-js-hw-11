@@ -1,5 +1,6 @@
-import axios from 'axios';
+
 import Notiflix from 'notiflix';
+import { axiosPhotos, searchParams } from './api.js';
 
 const form = document.querySelector('#search-form')
 const gallery = document.querySelector('.gallery')
@@ -8,26 +9,7 @@ const loadMoreBtn = document.querySelector('.load-more')
 form.addEventListener('submit', onSubmit)
 loadMoreBtn.addEventListener('click', handleLoadMoreBtn)
 
-  axios.defaults.baseURL = `https://pixabay.com/api/?`;
-  let currentPage = 1;
-  let totalPages;
-  const searchParams = new URLSearchParams({
-    key:'38665853-fe99969bd23bb921fc896ab74',
-    image_type: 'photo',
-    orientation:'horizontal',
-    safesearch: true,
-  per_page: 100, 
-  page: currentPage
-  });
-
-  async function axiosPhotos(){try
-    {const response = await axios('',{params:searchParams})
-    return response.data
-  }
-  catch (error) {
-    throw new Error('Error fetching images:', error);
-  }
-}
+let totalPages;
 
  async function onSubmit(e) { 
    e.preventDefault()
