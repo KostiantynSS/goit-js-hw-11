@@ -10,7 +10,7 @@ form.addEventListener('submit', onSubmit)
 loadMoreBtn.addEventListener('click', handleLoadMoreBtn)
 
 let totalPages;
-
+let currentPage;
  async function onSubmit(e) { 
    e.preventDefault()
   currentPage = 1;
