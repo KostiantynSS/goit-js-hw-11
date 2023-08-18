@@ -1,11 +1,27 @@
-.photo-card { flex-basis: calc((100% - 100px) / 4);}
+.photo-card { 
+    flex-basis: calc((100% - 100px) / 4);
+}
 
-
-.gallery{ display: flex;
+.search-form {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+background-color: rgb(119, 137, 238);
+}
+.gallery { 
+display: flex;
 flex-wrap: wrap;
-gap: 5px;}
+gap: 5px;
+}
 img { 
-    display: block;
-    width: 100%;
-  
-object-fit: contain;}
+display: block;
+width: 100%;
+object-fit: contain;
+}
+button[type=submit] {  
+border: 2px solid rgb(80, 76, 76);
+border-radius: 5px;
+}
+body {
+    margin: 0;
+}
